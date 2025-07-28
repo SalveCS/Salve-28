@@ -21,7 +21,7 @@ import sustainabilityImage1 from './assets/images/s_170525.png'
 import sustainabilityImage2 from './assets/images/s_240525.png'
 import sustainabilityImage3 from './assets/images/s_290525.png'
 import carbonoLogo from './assets/images/carbono_neutro_logo_f.png'
-import florestaSustentavel from './assets/Ima_S6.jpg'
+import florestaSustentavel from './assets/images/Ima_S6.jpg' // CORRIGIDO AQUI
 import teamImage from './assets/images/team-communication.jpg'
 
 function App() {
@@ -402,207 +402,164 @@ function App() {
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">
                   A beleza da <span className="text-gradient">natureza</span>
                 </h2>
+                <p className="text-lg text-muted-foreground">
+                  Todo trabalho que realizamos para nossos clientes é revertido em compensação de carbono. 
+                  Cada projeto gera o plantio de árvores, contribuindo para a neutralização das emissões e para um futuro mais verde.
+                </p>
               </motion.div>
-              
-              <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
-                Todo trabalho que realizamos para nossos clientes é revertido em compensação de carbono. 
-                Cada projeto gera o plantio de árvores, contribuindo para a neutralização das emissões 
-                e para um futuro mais verde.
-              </motion.p>
-              
-              <motion.p variants={fadeInUp} className="text-lg text-muted-foreground">
-                Investimos em projetos de reflorestamento, proteção de florestas existentes e apoio 
-                a iniciativas de energia limpa, alcançando assim a neutralização de carbono.
-              </motion.p>
+              <motion.div variants={fadeInUp}>
+                <p className="text-lg text-muted-foreground">
+                  Investimos em projetos de reflorestamento, proteção de florestas existentes e apoio a iniciativas de energia limpa, 
+                  alcançando assim a neutralização de carbono.
+                </p>
+              </motion.div>
             </motion.div>
-
-            <motion.div
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              <LazyImage
-                src={sustainabilityImage1}
-                alt="Práticas Sustentáveis"
-                className="rounded-2xl shadow-2xl hover-lift image-hover h-80"
-              />
-            </motion.div>
+            <ScrollReveal direction="right" delay={0.4}>
+              <div className="grid grid-cols-2 gap-4">
+                <LazyImage
+                  src={sustainabilityImage1}
+                  alt="Sustentabilidade 1"
+                  className="rounded-2xl shadow-lg hover-lift image-hover"
+                />
+                <LazyImage
+                  src={sustainabilityImage2}
+                  alt="Sustentabilidade 2"
+                  className="rounded-2xl shadow-lg hover-lift image-hover mt-8"
+                />
+                <LazyImage
+                  src={sustainabilityImage3}
+                  alt="Sustentabilidade 3"
+                  className="rounded-2xl shadow-lg hover-lift image-hover col-span-2"
+                />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Carbono Zero Section */}
-      <ParallaxSection 
-        id="carbono-zero" 
-        className="section-padding"
-        backgroundImage={sustainabilityImage2}
-        overlay={true}
-        overlayOpacity={0.8}
-        speed={0.3}
-      >
-        <div className="container mx-auto max-w-6xl text-white">
-          <ScrollReveal direction="up" delay={0.2}>
-            <div className="text-center mb-16">
-              <Badge className="mb-4 bg-green-100/20 text-green-100 border-green-100/30">Carbono Zero</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Nosso compromisso com o <span className="text-gradient">planeta</span>
-              </h2>
-              <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-                Cada projeto que desenvolvemos contribui para um futuro mais consciente. 
-                Nosso trabalho gera impacto positivo real no meio ambiente.
-              </p>
-            </div>
-          </ScrollReveal>
-
+      {/* Carbon Zero Section */}
+      <section id="carbono-zero" className="section-padding bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left" delay={0.4}>
               <LazyImage
                 src={florestaSustentavel}
                 alt="Floresta Sustentável"
-                className="w-full h-80 rounded-lg shadow-lg"
+                className="rounded-2xl shadow-2xl hover-lift image-hover h-80"
               />
             </ScrollReveal>
-
-            <div className="space-y-8">
-              <ScrollReveal direction="right" delay={0.6}>
-                <div className="text-center">
-                  <motion.div
-                    className="text-6xl md:text-8xl font-bold text-green-400 mb-4"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                  >
-                    + de 400
-                  </motion.div>
-                  <p className="text-2xl font-semibold text-gray-200">
-                    Árvores plantadas
-                  </p>
-                  <p className="text-lg text-gray-300 mt-2">
-                    como resultado do nosso trabalho
-                  </p>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal direction="right" delay={0.8}>
-                <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
-                  <div className="flex items-center mb-6">
-                    <img
-                      src={carbonoLogo}
-                      alt="Carbono Zero Logo"
-                      className="h-16 w-auto mr-4"
-                    />
-                    <h3 className="text-xl font-bold text-white">Certificação Carbono Zero</h3>
-                  </div>
-                  <p className="text-gray-200">
-                    Nossos projetos de comunicação são desenvolvidos com práticas conscientes, 
-                    contribuindo para a neutralização de carbono e o plantio de árvores nativas.
-                  </p>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </div>
-      </ParallaxSection>
-
-      {/* Contact Section */}
-      <section id="contact" className="section-padding bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div
-            className="text-center mb-16"
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <Badge className="mb-4 bg-secondary/20 text-secondary-foreground">Contato</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Vamos <span className="text-gradient">conversar</span>
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Pronto para transformar sua comunicação? Entre em contato conosco.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid md:grid-cols-3 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {[
-              {
-                icon: <Mail className="w-8 h-8 text-primary" />,
-                title: "Email",
-                content: "",
-                link: "mailto:salvempresa@gmail.com"
-              },
-              {
-                icon: <Phone className="w-8 h-8 text-primary" />,
-                title: "WhatsApp",
-                content: "",
-                link: "https://api.whatsapp.com/send/?phone=5511979757763&text=Olá! Gostaria de mais informações sobre os serviços da SALVE.&type=phone_number&app_absent=0"
-              },
-              {
-                icon: <Instagram className="w-8 h-8 text-primary" />,
-                title: "Instagram",
-                content: "",
-                link: "https://www.instagram.com/salve_cs/"
-              }
-            ].map((contact, index) => (
-              <motion.div key={index} variants={fadeInUp}>
-                <a
-                  href={contact.link}
-                  target={contact.title === "Email" ? "_self" : "_blank"}
-                  rel={contact.title !== "Email" ? "noopener noreferrer" : undefined}
-                  className="contact-card block p-8 rounded-3xl premium-shadow group"
-                  onClick={() => trackContactClick(contact.title.toLowerCase())}
-                >
-                  <div className="text-center">
-                    <div className="icon-container w-20 h-20 mx-auto mb-4 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      {contact.icon}
-                    </div>
-                  </div>
-                </a>
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <motion.div variants={fadeInUp}>
+                <Badge className="mb-4 bg-secondary/20 text-secondary-foreground">Carbono Zero</Badge>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  Nosso compromisso com <span className="text-gradient">o planeta</span>
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Cada projeto que desenvolvemos contribui para um futuro mais consciente. 
+                  Nosso trabalho gera impacto positivo real no meio ambiente.
+                </p>
               </motion.div>
-            ))}
-          </motion.div>
+              <motion.div variants={fadeInUp}>
+                <div className="flex items-center gap-4 mt-6">
+                  <img src={carbonoLogo} alt="Carbono Neutro" className="h-16 w-auto" />
+                  <div>
+                    <p className="text-5xl font-bold text-primary">+ de 400</p>
+                    <p className="text-muted-foreground">Árvores plantadas</p>
+                    <p className="text-muted-foreground">como resultado do nosso trabalho</p>
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div variants={fadeInUp}>
+                <h3 className="text-2xl font-bold mt-8 mb-4">Certificação Carbono Zero</h3>
+                <p className="text-lg text-muted-foreground">
+                  Nossos projetos de comunicação são desenvolvidos com práticas conscientes, 
+                  contribuindo para a neutralização de carbono e o plantio de árvores nativas.
+                </p>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* PWA Install Prompt */}
-      <PWAInstallPrompt />
+      {/* Contact Section */}
+      <section id="contact" className="section-padding bg-background">
+        <div className="container mx-auto max-w-6xl">
+          <ScrollReveal direction="up" delay={0.2}>
+            <div className="text-center mb-16">
+              <Badge className="mb-4 bg-primary/10 text-primary">Contato</Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Vamos <span className="text-gradient">conversar</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Pronto para transformar sua comunicação? Entre em contato conosco.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <ScrollReveal direction="up" delay={0.4}>
+              <Card className="contact-card p-6 text-center">
+                <CardHeader className="flex flex-col items-center">
+                  <Mail className="w-12 h-12 text-primary mb-4" />
+                  <CardTitle className="text-xl font-bold">Email</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">contato@salve.com</p>
+                  <a href="mailto:contato@salve.com" className="text-primary hover:underline mt-2 block">Enviar Email</a>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={0.6}>
+              <Card className="contact-card p-6 text-center">
+                <CardHeader className="flex flex-col items-center">
+                  <Phone className="w-12 h-12 text-primary mb-4" />
+                  <CardTitle className="text-xl font-bold">Telefone</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">+55 (11) 99999-9999</p>
+                  <a href="tel:+5511999999999" className="text-primary hover:underline mt-2 block">Ligar Agora</a>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+            <ScrollReveal direction="up" delay={0.8}>
+              <Card className="contact-card p-6 text-center">
+                <CardHeader className="flex flex-col items-center">
+                  <Instagram className="w-12 h-12 text-primary mb-4" />
+                  <CardTitle className="text-xl font-bold">Instagram</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">@salvecomunicacao</p>
+                  <a href="https://instagram.com/salvecomunicacao" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline mt-2 block">Visitar Perfil</a>
+                </CardContent>
+              </Card>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="bg-green-600 text-white py-12">
+      <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <motion.div
-            variants={fadeInUp}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="flex flex-col items-center"
-          >
-            <img 
-              src={logoSalveBranco} 
-              alt="SALVE" 
-              className="h-12 w-auto mb-4"
-            />
-            <p className="text-lg opacity-90 mb-6">Comunicação Sustentável</p>
-            <p className="opacity-75">
-              © 2025 SALVE. Todos os direitos reservados.
-            </p>
-            <div className="flex flex-col md:flex-row gap-2 md:gap-4 mt-4">
-              <a href="/termos-de-uso.html" target="_blank" rel="noopener noreferrer" className="text-white opacity-75 hover:opacity-100 transition-opacity duration-300">Termos de Uso</a>
-            </div>
-          </motion.div>
+          <p>&copy; {new Date().getFullYear()} SALVE. Todos os direitos reservados.</p>
+          <div className="flex justify-center space-x-4 mt-4">
+            <a href="/politica-de-privacidade.html" className="text-gray-400 hover:text-white">Política de Privacidade</a>
+            <a href="/termos-de-uso.html" className="text-gray-400 hover:text-white">Termos de Uso</a>
+          </div>
         </div>
       </footer>
+
+      {/* PWA Install Prompt */}
+      {isRegistered && <PWAInstallPrompt />}
     </div>
   )
 }
 
 export default App
+
 
