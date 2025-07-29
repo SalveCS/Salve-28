@@ -21,8 +21,9 @@ import sustainabilityImage1 from './assets/images/s_170525.png'
 import sustainabilityImage2 from './assets/images/s_240525.png'
 import sustainabilityImage3 from './assets/images/s_290525.png'
 import carbonoLogo from './assets/images/carbono_neutro_logo_f.png'
-import florestaSustentavel from './assets/images/Ima_S6.jpg' // CORRIGIDO AQUI
+import florestaSustentavel from './assets/images/Ima_S6.jpg'
 import teamImage from './assets/images/team-communication.jpg'
+import birdImage from './assets/images/bird_image.jpg' // Nova imagem do pássaro
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -417,7 +418,7 @@ function App() {
             <ScrollReveal direction="right" delay={0.4}>
               <div className="grid grid-cols-2 gap-4">
                 <LazyImage
-                  src={sustainabilityImage1}
+                  src={birdImage} // Usando a nova imagem do pássaro
                   alt="Sustentabilidade 1"
                   className="rounded-2xl shadow-lg hover-lift image-hover"
                 />
@@ -438,7 +439,7 @@ function App() {
       </section>
 
       {/* Carbon Zero Section */}
-      <section id="carbono-zero" className="section-padding bg-muted/30">
+      <section id="carbono-zero" className="section-padding bg-white"> {/* Alterado bg-muted/30 para bg-white */}
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollReveal direction="left" delay={0.4}>
